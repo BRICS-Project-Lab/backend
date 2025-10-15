@@ -1,0 +1,1177 @@
+INFO 2025-10-15 21:00:48,402 autoreload 75968 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:00:53,141 autoreload 76129 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:06:14,142 autoreload 76406 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:06:47,159 autoreload 76638 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-15 21:06:52,498 log 76638 6160855040 Not Found: /
+WARNING 2025-10-15 21:06:52,620 log 76638 6160855040 Not Found: /favicon.ico
+WARNING 2025-10-15 21:11:33,412 log 76638 6160281600 Not Found: /
+ERROR 2025-10-15 21:11:42,205 log 76638 6177107968 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `version` is not valid for model `AIModule`.
+ERROR 2025-10-15 21:11:42,268 log 76638 6177107968 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `version` is not valid for model `AIModule`.
+WARNING 2025-10-15 21:11:47,677 log 76638 6160281600 Not Found: /api/shema/
+ERROR 2025-10-15 21:11:56,193 log 76638 6160281600 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `version` is not valid for model `AIModule`.
+ERROR 2025-10-15 21:12:05,814 log 76638 6177107968 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `version` is not valid for model `AIModule`.
+ERROR 2025-10-15 21:12:05,874 log 76638 6177107968 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `version` is not valid for model `AIModule`.
+WARNING 2025-10-15 21:12:36,905 log 76638 6193934336 Not Found: /
+INFO 2025-10-15 21:13:31,550 autoreload 76638 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:13:32,239 autoreload 77002 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:13:33,631 autoreload 77002 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:13:34,074 autoreload 77015 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:13:49,822 autoreload 77015 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:13:50,379 autoreload 77020 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:13:59,962 autoreload 77020 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:14:00,531 autoreload 77031 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:16:28,504 autoreload 77031 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:16:29,174 autoreload 77134 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-15 21:16:52,481 log 77134 6125088768 Not Found: /info/
+WARNING 2025-10-15 21:17:11,190 log 77134 6125088768 Forbidden: /health/info/
+WARNING 2025-10-15 21:18:45,498 log 77134 6125088768 Not Found: /info/
+WARNING 2025-10-15 21:18:48,846 log 77134 6125088768 Not Found: /
+INFO 2025-10-15 21:19:50,915 autoreload 77134 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:19:51,624 autoreload 77283 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:20:00,196 autoreload 77283 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:20:00,847 autoreload 77303 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:20:20,742 autoreload 77303 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-15 21:20:21,346 autoreload 77316 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:25:06,594 autoreload 77316 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:25:07,398 autoreload 77518 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:25:13,945 autoreload 77518 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:25:14,491 autoreload 77531 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:25:18,915 autoreload 77531 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:25:19,312 autoreload 77537 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:25:38,964 autoreload 77834 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-15 21:25:46,204 log 77834 6202716160 Not Found: /
+ERROR 2025-10-15 21:25:56,893 log 77834 6202716160 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `license_type` is not valid for model `AIModule`.
+ERROR 2025-10-15 21:25:56,952 log 77834 6202716160 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `license_type` is not valid for model `AIModule`.
+INFO 2025-10-15 21:26:40,616 autoreload 77834 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:26:41,275 autoreload 77889 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:26:43,634 autoreload 77889 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:26:44,048 autoreload 77895 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:26:45,337 autoreload 77895 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:26:51,247 autoreload 78174 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-15 21:26:53,046 log 78174 6124679168 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `published_at` is not valid for model `AIModule`.
+ERROR 2025-10-15 21:26:53,113 log 78174 6124679168 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 111, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1367, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1423, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `published_at` is not valid for model `AIModule`.
+INFO 2025-10-15 21:27:18,497 autoreload 78174 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:27:19,133 autoreload 78208 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:27:24,595 autoreload 78208 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:27:25,059 autoreload 78217 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:27:26,309 autoreload 78217 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:27:26,674 autoreload 78218 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:27:35,243 autoreload 78496 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-15 21:27:37,399 log 78496 6162919424 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 672, in _map_serializer_field
+    component = self.resolve_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `installation_guide` is not valid for model `AIModuleDetail`.
+ERROR 2025-10-15 21:27:37,454 log 78496 6162919424 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 672, in _map_serializer_field
+    component = self.resolve_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `installation_guide` is not valid for model `AIModuleDetail`.
+INFO 2025-10-15 21:28:32,752 autoreload 78496 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:28:33,407 autoreload 78530 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:28:34,748 autoreload 78530 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:28:35,170 autoreload 78535 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:29:01,054 autoreload 78824 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-15 21:29:16,585 log 78824 6126055424 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 672, in _map_serializer_field
+    component = self.resolve_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `usage_examples` is not valid for model `AIModuleDetail`.
+ERROR 2025-10-15 21:29:16,638 log 78824 6126055424 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 672, in _map_serializer_field
+    component = self.resolve_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `usage_examples` is not valid for model `AIModuleDetail`.
+INFO 2025-10-15 21:29:47,041 autoreload 78824 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:29:47,623 autoreload 78848 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:29:49,974 autoreload 78848 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:29:50,348 autoreload 78857 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:03,035 autoreload 78857 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:30:03,443 autoreload 78873 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:04,723 autoreload 78873 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:30:05,123 autoreload 78877 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:06,283 autoreload 78877 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:30:06,658 autoreload 78881 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:12,069 autoreload 78881 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-15 21:30:12,458 autoreload 78893 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:27,870 autoreload 79260 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-15 21:30:30,169 log 79260 6166376448 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 667, in _map_serializer_field
+    schema = self._unwrap_list_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1399, in _unwrap_list_serializer
+    result = self._unwrap_list_serializer(serializer.child, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1396, in _unwrap_list_serializer
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `impact_factor` is not valid for model `Publication`.
+ERROR 2025-10-15 21:30:30,237 log 79260 6166376448 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 281, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 252, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 99, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1295, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1327, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1026, in _map_basic_serializer
+    schema = self._map_serializer_field(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 667, in _map_serializer_field
+    schema = self._unwrap_list_serializer(field, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1399, in _unwrap_list_serializer
+    result = self._unwrap_list_serializer(serializer.child, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1396, in _unwrap_list_serializer
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1605, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 927, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1020, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `impact_factor` is not valid for model `Publication`.
+INFO 2025-10-15 21:30:47,917 autoreload 79260 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-15 21:30:48,546 autoreload 79293 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-15 21:30:54,625 autoreload 79410 8765440320 Watching for file changes with StatReloader
