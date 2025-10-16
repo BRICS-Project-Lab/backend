@@ -17,6 +17,8 @@ class AuditLog(models.Model):
         REJECT = 'reject', _('Rejected')
         BLOCK = 'block', _('Blocked')
         UNBLOCK = 'unblock', _('Unblocked')
+        LIKE = 'like', _('Liked')      
+        UNLIKE = 'unlike', _('Unliked')
     
     # Полиморфная связь с любым объектом
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)

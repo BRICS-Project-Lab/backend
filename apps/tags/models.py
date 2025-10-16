@@ -65,6 +65,8 @@ class Tag(models.Model):
             models.Index(fields=['slug']),
         ]
     
+    def get_color_or_default(self):
+        return self.color or '#999999'
     def __str__(self):
         return f"{self.category.name}: {self.name}"
 

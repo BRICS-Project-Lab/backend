@@ -1175,3 +1175,517 @@ django.core.exceptions.ImproperlyConfigured: Field name `impact_factor` is not v
 INFO 2025-10-15 21:30:47,917 autoreload 79260 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
 INFO 2025-10-15 21:30:48,546 autoreload 79293 8765440320 Watching for file changes with StatReloader
 INFO 2025-10-15 21:30:54,625 autoreload 79410 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:21:33,010 autoreload 1359 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:21:43,434 autoreload 1359 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/admin.py changed, reloading.
+INFO 2025-10-16 12:21:43,905 autoreload 1369 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:22:14,684 autoreload 1369 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/admin.py changed, reloading.
+INFO 2025-10-16 12:22:15,235 autoreload 1400 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:24:08,490 autoreload 1400 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/admin.py changed, reloading.
+INFO 2025-10-16 12:24:09,162 autoreload 1497 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:24:24,952 autoreload 1497 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:24:25,511 autoreload 1519 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:24:30,937 autoreload 1519 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:24:31,323 autoreload 1531 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:25:01,566 autoreload 1531 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/tags/admin.py changed, reloading.
+INFO 2025-10-16 12:25:02,160 autoreload 1557 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:25:09,679 autoreload 1557 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/admin.py changed, reloading.
+INFO 2025-10-16 12:25:10,330 autoreload 1573 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:25:24,001 autoreload 1573 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/common/admin.py changed, reloading.
+INFO 2025-10-16 12:25:24,393 autoreload 1590 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 12:33:28,984 log 1590 6171619328 Internal Server Error: /admin/ai_modules/aimodule/add/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 178, in __getitem__
+    field = self.fields[name]
+            ~~~~~~~~~~~^^^^^^
+KeyError: 'slug'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1828, in _changeform_view
+    admin_form = helpers.AdminForm(
+        form,
+    ...<6 lines>...
+        model_admin=self,
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/helpers.py", line 53, in __init__
+    {"field": form[field_name], "dependencies": [form[f] for f in dependencies]}
+              ~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 180, in __getitem__
+    raise KeyError(
+    ...<6 lines>...
+    )
+KeyError: "Key 'slug' not found in 'AIModuleForm'. Choices are: company, country, created_by, meta_description, name, params_count, search_vector, status, task_short_description."
+ERROR 2025-10-16 12:33:47,700 log 1590 6137966592 Internal Server Error: /admin/ai_modules/aimodule/add/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 178, in __getitem__
+    field = self.fields[name]
+            ~~~~~~~~~~~^^^^^^
+KeyError: 'slug'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1828, in _changeform_view
+    admin_form = helpers.AdminForm(
+        form,
+    ...<6 lines>...
+        model_admin=self,
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/helpers.py", line 53, in __init__
+    {"field": form[field_name], "dependencies": [form[f] for f in dependencies]}
+              ~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 180, in __getitem__
+    raise KeyError(
+    ...<6 lines>...
+    )
+KeyError: "Key 'slug' not found in 'AIModuleForm'. Choices are: company, country, created_by, meta_description, name, params_count, search_vector, status, task_short_description."
+INFO 2025-10-16 12:36:32,883 autoreload 1590 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:36:33,574 autoreload 2224 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:36:41,081 autoreload 2224 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:36:41,622 autoreload 2242 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:36:44,919 autoreload 2242 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:36:45,290 autoreload 2253 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 12:38:18,039 log 2253 6122336256 Internal Server Error: /admin/ai_modules/aimodule/1/change/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 178, in __getitem__
+    field = self.fields[name]
+            ~~~~~~~~~~~^^^^^^
+KeyError: 'slug'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1828, in _changeform_view
+    admin_form = helpers.AdminForm(
+        form,
+    ...<6 lines>...
+        model_admin=self,
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/contrib/admin/helpers.py", line 53, in __init__
+    {"field": form[field_name], "dependencies": [form[f] for f in dependencies]}
+              ~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/forms/forms.py", line 180, in __getitem__
+    raise KeyError(
+    ...<6 lines>...
+    )
+KeyError: "Key 'slug' not found in 'AIModuleForm'. Choices are: company, country, created_by, meta_description, name, params_count, search_vector, status, task_short_description."
+INFO 2025-10-16 12:39:50,791 autoreload 2253 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-16 12:39:51,491 autoreload 2419 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-16 12:44:24,301 log 2419 6195163136 Not Found: /docs/
+ERROR 2025-10-16 12:44:50,713 log 2419 6195163136 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 92, in get_rate
+    return self.THROTTLE_RATES[self.scope]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'burst'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 358, in check_throttles
+    for throttle in self.get_throttles():
+                    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 284, in get_throttles
+    return [throttle() for throttle in self.throttle_classes]
+            ~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 70, in __init__
+    self.rate = self.get_rate()
+                ~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 95, in get_rate
+    raise ImproperlyConfigured(msg)
+django.core.exceptions.ImproperlyConfigured: No default throttle rate set for 'burst' scope
+WARNING 2025-10-16 12:45:17,726 log 2419 6195163136 Bad Request: /api/auth/register/
+WARNING 2025-10-16 12:47:08,074 log 2419 6195163136 Not Found: /
+/api/auth/register/
+ERROR 2025-10-16 12:47:34,248 utils 2419 6195163136 Failed to send email to firesieht@mail.ru: emails/welcome.html
+ERROR 2025-10-16 12:47:58,098 log 2419 6195163136 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 92, in get_rate
+    return self.THROTTLE_RATES[self.scope]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'burst'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 358, in check_throttles
+    for throttle in self.get_throttles():
+                    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 284, in get_throttles
+    return [throttle() for throttle in self.throttle_classes]
+            ~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 70, in __init__
+    self.rate = self.get_rate()
+                ~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/throttling.py", line 95, in get_rate
+    raise ImproperlyConfigured(msg)
+django.core.exceptions.ImproperlyConfigured: No default throttle rate set for 'burst' scope
+INFO 2025-10-16 12:49:39,828 autoreload 2419 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-16 12:49:40,430 autoreload 3020 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:49:41,749 autoreload 3020 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-16 12:49:42,126 autoreload 3027 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 12:49:47,429 log 3027 6204764160 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 84, in get_queryset
+    if not (self.request.user.is_authenticated and self.request.user.is_admin()):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'is_admin'
+ERROR 2025-10-16 12:50:45,206 log 3027 6204764160 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 84, in get_queryset
+    if not (self.request.user.is_authenticated and self.request.user.is_admin()):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'is_admin'
+INFO 2025-10-16 12:52:13,432 autoreload 3027 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 12:52:13,938 autoreload 3165 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:52:19,270 autoreload 3165 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 12:52:19,526 autoreload 3178 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:52:20,750 autoreload 3178 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 12:52:21,191 autoreload 3185 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:54:31,338 autoreload 3185 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 12:54:31,814 autoreload 3264 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:54:34,079 autoreload 3264 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 12:54:34,490 autoreload 3280 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:54:59,556 autoreload 3280 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 12:54:59,996 autoreload 3308 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 12:55:03,268 autoreload 3308 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 12:55:03,630 autoreload 3316 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:07,022 autoreload 3316 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/common/models.py changed, reloading.
+INFO 2025-10-16 13:00:07,507 autoreload 3468 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:08,762 autoreload 3468 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/common/models.py changed, reloading.
+INFO 2025-10-16 13:00:09,021 autoreload 3478 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:10,242 autoreload 3478 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/common/models.py changed, reloading.
+INFO 2025-10-16 13:00:10,515 autoreload 3479 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:18,817 autoreload 3479 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/common/models.py changed, reloading.
+INFO 2025-10-16 13:00:19,210 autoreload 3487 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:28,903 autoreload 3487 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 13:00:29,463 autoreload 3503 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:31,808 autoreload 3503 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 13:00:32,108 autoreload 3511 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:33,333 autoreload 3511 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 13:00:33,667 autoreload 3512 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:38,040 autoreload 3512 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/accounts/models.py changed, reloading.
+INFO 2025-10-16 13:00:38,449 autoreload 3525 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:56,391 autoreload 3525 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:00:56,780 autoreload 3545 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:00:58,027 autoreload 3545 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:00:58,424 autoreload 3554 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:01:09,060 autoreload 3554 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:01:09,606 autoreload 3573 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:01:25,519 autoreload 3573 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:01:25,839 autoreload 3588 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:01:32,138 autoreload 3588 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:01:32,502 autoreload 3597 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:01:33,803 autoreload 3597 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:01:34,181 autoreload 3600 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 13:03:26,722 log 3600 6198439936 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 226, in get_is_liked
+    return obj.is_liked_by(request.user)
+           ^^^^^^^^^^^^^^^
+AttributeError: 'AIModule' object has no attribute 'is_liked_by'
+INFO 2025-10-16 13:05:24,310 autoreload 3600 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:05:24,860 autoreload 3755 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:05:27,159 autoreload 3755 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 13:05:27,573 autoreload 3771 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 13:06:04,507 log 3771 6185594880 Internal Server Error: /api/v1/ai-modules/export/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 269, in export
+    'exported_at': timezone.now().isoformat()
+                   ^^^^^^^^
+NameError: name 'timezone' is not defined
+ERROR 2025-10-16 13:06:26,449 log 3771 6168768512 Internal Server Error: /api/v1/ai-modules/export/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 269, in export
+    'exported_at': timezone.now().isoformat()
+                   ^^^^^^^^
+NameError: name 'timezone' is not defined
+INFO 2025-10-16 13:08:12,649 autoreload 3771 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-16 13:08:13,278 autoreload 3920 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 13:09:09,551 log 3920 6199144448 Internal Server Error: /api/v1/analytics/tags/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/analytics_views.py", line 192, in get
+    'color': tag.get_color_or_default()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tag' object has no attribute 'get_color_or_default'
+ERROR 2025-10-16 13:09:22,989 log 3920 6215970816 Internal Server Error: /api/v1/analytics/tags/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/analytics_views.py", line 192, in get
+    'color': tag.get_color_or_default()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tag' object has no attribute 'get_color_or_default'
+INFO 2025-10-16 13:10:22,787 autoreload 3920 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/tags/models.py changed, reloading.
+INFO 2025-10-16 13:10:23,254 autoreload 4017 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 13:10:24,537 autoreload 4017 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/tags/models.py changed, reloading.
+INFO 2025-10-16 13:10:24,988 autoreload 4027 8765440320 Watching for file changes with StatReloader

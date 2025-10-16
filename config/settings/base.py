@@ -121,7 +121,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '100/hour',
-        'user': '1000/hour'
+        'user': '1000/hour',
+        'burst': '60/min',
+        'sustained': '5000/day',
+        'login': '5/min',
     },
     'EXCEPTION_HANDLER': 'apps.api.exceptions.custom_exception_handler',
 }

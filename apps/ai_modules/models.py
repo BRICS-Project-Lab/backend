@@ -8,6 +8,13 @@ User = get_user_model()
 class AIModule(models.Model):
     """Основная модель для ИИ-сервиса"""
     
+    def can_edit(self, user):
+        if not user.is_authenticated:
+            return False
+        if getattr(user, 'is_admin', None) and user.is_admin():
+            return True
+        return self.created_by_id == user.id
+
     class Status(models.TextChoices):
         DRAFT = 'draft', _('Draft')
         ON_REVIEW = 'on_review', _('On Review')
@@ -81,6 +88,11 @@ class AIModule(models.Model):
             models.Index(fields=['slug']),
         ]
     
+    def is_liked_by(self, user):
+        if not getattr(user, 'is_authenticated', False):
+            return False
+        return self.likes.filter(user_id=user.id).exists()
+
     def __str__(self):
         return f"{self.name} ({self.company})"
 
@@ -181,8 +193,11 @@ class AIModuleFile(models.Model):
             models.Index(fields=['ai_module', 'file_type']),
         ]
     
+    def get_file_type_display(self):
+        return dict(self.FileType.choices).get(self.file_type, self.file_type)
+    
     def __str__(self):
-        return f"{self.name} ({self.get_file_type_display()})"
+        return f"{self.name} ({self.get_file_type_display()}) {self. get_file_size_display()}"
     
     def save(self, *args, **kwargs):
         if self.file and not self.size:

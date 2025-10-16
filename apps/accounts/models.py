@@ -25,6 +25,9 @@ class User(AbstractUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
+    def is_admin(self):
+        return self.is_superuser or self.role == self.Role.ADMIN
+
     class Meta:
         verbose_name = _('User')
         verbose_name_plural = _('Users')
