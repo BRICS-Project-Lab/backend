@@ -108,29 +108,19 @@ class TagCategorySerializer(serializers.ModelSerializer):
 
 class PublicationSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     """Сериализатор для публикаций"""
-    
-    authors_list = serializers.SerializerMethodField()
-    citation_url = serializers.SerializerMethodField()
-    formatted_citation = serializers.SerializerMethodField()
+  
     ai_module_name = serializers.CharField(source='ai_module.name', read_only=True)
     
     class Meta:
         model = Publication
         fields = [
-            'id', 'title', 'authors', 'authors_list', 'journal_conference',
+            'id', 'title', 'authors', 'journal_conference',
             'publication_date', 'doi', 'url', 'abstract', 'keywords',
-            'citation_count', 'citation_url', 
-            'formatted_citation', 'ai_module_name', 'created_at'
+            'citation_count', 
+            'ai_module_name', 'created_at'
         ]
     
-    def get_authors_list(self, obj):
-        return obj.get_authors_list()
-    
-    def get_citation_url(self, obj):
-        return obj.get_citation_url()
-    
-    def get_formatted_citation(self, obj):
-        return obj.format_citation()
+   
 
 class AIModuleFileSerializer(serializers.ModelSerializer):
     """Сериализатор для файлов модулей"""
@@ -159,24 +149,15 @@ class AIModuleFileSerializer(serializers.ModelSerializer):
 
 class AIModuleDetailSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     """Сериализатор для детальной информации модуля"""
-    
-    metrics_display = serializers.SerializerMethodField()
-    supported_languages_display = serializers.SerializerMethodField()
-    
+        
     class Meta:
         model = AIModuleDetail
         fields = [
             'description', 'technical_info', 'architecture',
-            'training_data_description', 'metrics', 'metrics_display',
-            'supported_languages', 'supported_languages_display',
+            'training_data_description', 'metrics',
+            'supported_languages',
             'requirements', 'installation_guide',
         ]
-    
-    def get_metrics_display(self, obj):
-        return obj.get_metrics_display()
-    
-    def get_supported_languages_display(self, obj):
-        return obj.get_supported_languages_list()
 
 class AIModuleTagSerializer(serializers.ModelSerializer):
     """Сериализатор для связей модуль-тег"""
@@ -322,17 +303,6 @@ class AIModuleCreateSerializer(serializers.ModelSerializer):
             for cat_id, data in category_tags.items():
                 category = data['category']
                 tag_count = len(data['tags'])
-                
-                if tag_count < category.min_tags:
-                    raise serializers.ValidationError(
-                        f"Category '{category.name}' requires at least {category.min_tags} tags"
-                    )
-                
-                if tag_count > category.max_tags:
-                    raise serializers.ValidationError(
-                        f"Category '{category.name}' allows maximum {category.max_tags} tags"
-                    )
-        
         return attrs
     
     def create(self, validated_data):

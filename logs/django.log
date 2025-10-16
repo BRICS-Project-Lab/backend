@@ -1689,3 +1689,769 @@ INFO 2025-10-16 13:10:22,787 autoreload 3920 8765440320 /Users/firesieht/Documen
 INFO 2025-10-16 13:10:23,254 autoreload 4017 8765440320 Watching for file changes with StatReloader
 INFO 2025-10-16 13:10:24,537 autoreload 4017 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/tags/models.py changed, reloading.
 INFO 2025-10-16 13:10:24,988 autoreload 4027 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 19:44:47,947 exceptions 4027 6214316032 API Error in AIModuleViewSet: {'params_count': [ErrorDetail(string='Ensure this value is less than or equal to 9223372036854775807.', code='max_value')], 'tag_ids': [ErrorDetail(string='Some tags do not exist or are inactive', code='invalid')], 'publications': [{'url': [ErrorDetail(string='Enter a valid URL.', code='invalid')]}]}
+WARNING 2025-10-16 19:44:47,948 log 4027 6214316032 Bad Request: /api/v1/ai-modules/
+ERROR 2025-10-16 19:45:03,461 exceptions 4027 6214316032 API Error in AIModuleViewSet: {'tag_ids': [ErrorDetail(string='Some tags do not exist or are inactive', code='invalid')], 'publications': [{'url': [ErrorDetail(string='Enter a valid URL.', code='invalid')]}]}
+WARNING 2025-10-16 19:45:03,462 log 4027 6214316032 Bad Request: /api/v1/ai-modules/
+ERROR 2025-10-16 19:45:34,106 exceptions 4027 6231142400 API Error in AIModuleViewSet: {'tag_ids': [ErrorDetail(string='Some tags do not exist or are inactive', code='invalid')]}
+WARNING 2025-10-16 19:45:34,107 log 4027 6231142400 Bad Request: /api/v1/ai-modules/
+ERROR 2025-10-16 19:46:10,650 log 4027 6214316032 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 326, in validate
+    if tag_count < category.min_tags:
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: 'TagCategory' object has no attribute 'min_tags'
+INFO 2025-10-16 19:54:46,999 autoreload 4027 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:54:47,743 autoreload 8243 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:54:50,175 autoreload 8243 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:54:50,624 autoreload 8259 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:55:05,520 autoreload 8259 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:55:06,112 autoreload 8289 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:55:08,526 autoreload 8289 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:55:08,973 autoreload 8300 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:55:25,877 autoreload 8300 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:55:26,513 autoreload 8320 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:56:55,379 autoreload 8320 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:56:56,082 autoreload 8366 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 19:57:09,922 autoreload 8366 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 19:57:10,508 autoreload 8387 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-16 19:57:49,660 log 8387 6156349440 Not Found: /
+ERROR 2025-10-16 19:58:25,330 exceptions 8387 6156349440 API Error in AIModuleViewSet: {'tag_ids': [ErrorDetail(string='Some tags do not exist or are inactive', code='invalid')], 'publications': [{'url': [ErrorDetail(string='Enter a valid URL.', code='invalid')]}]}
+WARNING 2025-10-16 19:58:25,330 log 8387 6156349440 Bad Request: /api/v1/ai-modules/
+ERROR 2025-10-16 19:58:36,034 exceptions 8387 6156349440 API Error in AIModuleViewSet: {'publications': [{'url': [ErrorDetail(string='Enter a valid URL.', code='invalid')]}]}
+WARNING 2025-10-16 19:58:36,034 log 8387 6156349440 Bad Request: /api/v1/ai-modules/
+ERROR 2025-10-16 19:58:54,023 log 8387 6173175808 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 104, in perform_create
+    serializer.save(
+    ~~~~~~~~~~~~~~~^
+        created_by=self.request.user,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        status=AIModule.Status.DRAFT
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 357, in create
+    Publication.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ai_module=ai_module,
+        ^^^^^^^^^^^^^^^^^^^^
+        added_by=self.context['request'].user,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **pub_data
+        ^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Publication() got unexpected keyword arguments: 'added_by'
+INFO 2025-10-16 20:01:32,626 autoreload 8387 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:01:33,172 autoreload 8544 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:01:41,555 autoreload 8544 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:01:41,874 autoreload 8555 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:01:44,132 autoreload 8555 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:01:44,444 autoreload 8562 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:01:55,834 autoreload 8562 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:01:56,237 autoreload 8576 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:01:59,547 autoreload 8576 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:01:59,874 autoreload 8583 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:02:05,165 autoreload 8583 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:02:05,688 autoreload 8590 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:02:07,038 autoreload 8590 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/publications/models.py changed, reloading.
+INFO 2025-10-16 20:02:07,528 autoreload 8601 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:02:49,898 autoreload 9080 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:03:06,368 log 9080 6138015744 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ai_modules_aimodule_slug_key"
+DETAIL:  Key (slug)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 104, in perform_create
+    serializer.save(
+    ~~~~~~~~~~~~~~~^
+        created_by=self.request.user,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        status=AIModule.Status.DRAFT
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 334, in create
+    ai_module = AIModule.objects.create(**validated_data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "ai_modules_aimodule_slug_key"
+DETAIL:  Key (slug)=() already exists.
+
+ERROR 2025-10-16 20:03:43,874 log 9080 6154842112 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ai_modules_aimodule_slug_key"
+DETAIL:  Key (slug)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 104, in perform_create
+    serializer.save(
+    ~~~~~~~~~~~~~~~^
+        created_by=self.request.user,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        status=AIModule.Status.DRAFT
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 334, in create
+    ai_module = AIModule.objects.create(**validated_data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "ai_modules_aimodule_slug_key"
+DETAIL:  Key (slug)=() already exists.
+
+INFO 2025-10-16 20:05:07,723 autoreload 9080 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 20:05:08,266 autoreload 9174 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:05:14,633 autoreload 9174 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 20:05:15,216 autoreload 9188 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:05:43,985 log 9188 6131511296 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 104, in perform_create
+    serializer.save(
+    ~~~~~~~~~~~~~~~^
+        created_by=self.request.user,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        status=AIModule.Status.DRAFT
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 334, in create
+    ai_module = AIModule.objects.create(**validated_data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py", line 112, in save
+    self.slug = self._generate_unique_slug()
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py", line 100, in _generate_unique_slug
+    base = slugify(self.name or '')
+           ^^^^^^^
+NameError: name 'slugify' is not defined
+INFO 2025-10-16 20:05:59,378 autoreload 9188 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-16 20:06:00,047 autoreload 9240 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:06:09,276 log 9240 6167605248 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 176, in get_metrics_display
+    return obj.get_metrics_display()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AIModuleDetail' object has no attribute 'get_metrics_display'
+INFO 2025-10-16 20:07:15,484 autoreload 9240 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:07:16,223 autoreload 9296 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:07:56,899 autoreload 9296 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:07:57,545 autoreload 9337 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:08:09,282 autoreload 9337 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:08:09,928 autoreload 9365 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:09:11,877 log 9365 6157103104 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1837, in to_representation
+    method = getattr(self.parent, self.method_name)
+AttributeError: 'AIModuleDetailSerializer' object has no attribute 'get_metrics_display'
+ERROR 2025-10-16 20:12:34,696 log 9365 6173929472 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1837, in to_representation
+    method = getattr(self.parent, self.method_name)
+AttributeError: 'AIModuleDetailSerializer' object has no attribute 'get_metrics_display'
+ERROR 2025-10-16 20:13:33,358 exceptions 9365 6190755840 API Error in AIModuleViewSet: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid or expired', code='token_not_valid')}]}
+WARNING 2025-10-16 20:13:33,358 log 9365 6190755840 Unauthorized: /api/v1/ai-modules/
+WARNING 2025-10-16 20:14:06,885 log 9365 6190755840 Bad Request: /api/auth/register/
+ERROR 2025-10-16 20:14:11,200 utils 9365 6190755840 Failed to send email to firesi1eht@mail.ru: emails/welcome.html
+ERROR 2025-10-16 20:14:27,322 log 9365 6190755840 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1837, in to_representation
+    method = getattr(self.parent, self.method_name)
+AttributeError: 'AIModuleDetailSerializer' object has no attribute 'get_metrics_display'
+INFO 2025-10-16 20:18:23,856 autoreload 9365 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:18:24,571 autoreload 9726 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:18:25,983 autoreload 9726 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:18:26,445 autoreload 9738 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:18:27,795 autoreload 9738 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:18:28,252 autoreload 9740 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:19:24,493 autoreload 9740 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:19:25,142 autoreload 9790 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:19:43,221 autoreload 9790 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:19:43,813 autoreload 9808 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:19:55,513 autoreload 9808 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:19:56,095 autoreload 9827 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:20:05,793 autoreload 9827 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:20:06,483 autoreload 9848 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:20:12,973 log 9848 6130544640 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 483, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 479, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'supported_languages_display' was declared on serializer AIModuleDetailSerializer, but has not been included in the 'fields' option.
+INFO 2025-10-16 20:20:31,970 autoreload 9848 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:20:32,545 autoreload 9863 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:20:33,925 autoreload 9863 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:20:34,378 autoreload 9872 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:20:40,341 log 9872 6136131584 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py", line 127, in get_authors_list
+    return obj.get_authors_list()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Publication' object has no attribute 'get_authors_list'
+INFO 2025-10-16 20:21:31,772 autoreload 9872 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:21:32,449 autoreload 9905 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:21:48,401 autoreload 9905 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:21:49,005 autoreload 9918 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:21:57,667 autoreload 9918 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:21:58,201 autoreload 9939 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:22:02,680 autoreload 9939 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:22:03,141 autoreload 9947 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-16 20:22:12,810 autoreload 9947 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:22:13,379 autoreload 9978 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-16 20:22:24,384 log 9978 6131773440 Internal Server Error: /api/v1/ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 483, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 618, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 666, in to_internal_value
+    validated = self.child.run_validation(item)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 479, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/firesieht/Documents/programming/BRICS/backend/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `authors_list` is not valid for model `Publication`.
+INFO 2025-10-16 20:22:38,743 autoreload 9978 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-16 20:22:39,401 autoreload 10036 8765440320 Watching for file changes with StatReloader

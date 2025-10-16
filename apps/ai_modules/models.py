@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
+from django.utils.text import slugify
 
 User = get_user_model()
 
@@ -95,6 +96,22 @@ class AIModule(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.company})"
+
+    def _generate_unique_slug(self):
+        base = slugify(self.name or '')
+        slug = base or 'module'
+        qs = AIModule.objects.exclude(pk=self.pk)
+        i = 1
+        unique = slug
+        while qs.filter(slug=unique).exists():
+            i += 1
+            unique = f'{slug}-{i}'
+        return unique
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._generate_unique_slug()
+        super().save(*args, **kwargs)
 
 class AIModuleDetail(models.Model):
     """Детальная информация о модели"""
