@@ -214,7 +214,7 @@ class AIModuleDetailFullSerializer(AIModuleListSerializer):
     
     class Meta(AIModuleListSerializer.Meta):
         fields = AIModuleListSerializer.Meta.fields + [
-            'meta_description', 'details', 'publications', 'files', 'tags_by_category'
+            'details', 'publications', 'files', 'tags_by_category'
         ]
     
     def get_tags_by_category(self, obj):
@@ -254,7 +254,7 @@ class AIModuleCreateSerializer(serializers.ModelSerializer):
         fields = [
             'name', 'company', 'country', 'params_count',
             'task_short_description', 'version', 'license_type',
-            'meta_description', 'details', 'tag_ids', 'publications'
+             'details', 'tag_ids', 'publications'
         ]
     
     def validate_tag_ids(self, value):
@@ -355,7 +355,7 @@ class AIModuleUpdateSerializer(serializers.ModelSerializer):
         fields = [
             'name', 'company', 'country', 'params_count',
             'task_short_description', 'version', 'license_type',
-            'meta_description', 'details', 'tag_ids'
+            'details', 'tag_ids'
         ]
     
     def update(self, instance, validated_data):

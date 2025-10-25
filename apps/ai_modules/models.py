@@ -24,10 +24,10 @@ class AIModule(models.Model):
         BLOCKED = 'blocked', _('Blocked')
     
     # Основные поля
-    name = models.CharField(max_length=255, verbose_name=_('Name'))
-    slug = models.SlugField(max_length=255, unique=True)
-    company = models.CharField(max_length=255, verbose_name=_('Company'))
-    country = models.CharField(max_length=100, verbose_name=_('Country'))
+    name = models.CharField(max_length=1024, verbose_name=_('Name'))
+    slug = models.SlugField(max_length=1024, unique=True)
+    company = models.CharField(max_length=1024, verbose_name=_('Company'))
+    country = models.CharField(max_length=1024, verbose_name=_('Country'))
     params_count = models.BigIntegerField(
         validators=[MinValueValidator(1)],
         verbose_name=_('Parameters Count'),
@@ -39,7 +39,7 @@ class AIModule(models.Model):
         verbose_name=_('Short Description')
     )
     license_type = models.CharField(
-        max_length=100,
+        max_length=1024,
         blank=True,
         verbose_name=_('License Type'),
         help_text=_('Type of license, e.g., MIT, Apache 2.0')

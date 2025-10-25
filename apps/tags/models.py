@@ -7,8 +7,8 @@ User = get_user_model()
 class TagCategory(models.Model):
     """Категории тегов"""
     
-    name = models.CharField(max_length=100, unique=True, verbose_name=_('Name'))
-    slug = models.SlugField(max_length=100, unique=True)
+    name = models.CharField(max_length=1024, unique=True, verbose_name=_('Name'))
+    slug = models.SlugField(max_length=1024, unique=True)
     description = models.TextField(blank=True, verbose_name=_('Description'))
     order = models.PositiveIntegerField(default=0, verbose_name=_('Order'))
     is_active = models.BooleanField(default=True, verbose_name=_('Is Active'))
@@ -29,8 +29,8 @@ class Tag(models.Model):
         on_delete=models.CASCADE,
         related_name='tags'
     )
-    name = models.CharField(max_length=100, verbose_name=_('Name'))
-    slug = models.SlugField(max_length=100)
+    name = models.CharField(max_length=1024, verbose_name=_('Name'))
+    slug = models.SlugField(max_length=1024)
     description = models.TextField(blank=True, verbose_name=_('Description'))
     color = models.CharField(max_length=7, blank=True, verbose_name=_('Color'))  # HEX цвет
     
