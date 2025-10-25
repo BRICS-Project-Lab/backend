@@ -446,7 +446,7 @@ class PublicationViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = PublicationFilter
     search_fields = ['title', 'authors', 'journal_conference', 'abstract']
-    ordering_fields = ['publication_date', 'citation_count', 'created_at']
+    ordering_fields = ['publication_date', 'created_at']
     ordering = ['-publication_date']
     pagination_class = CustomPageNumberPagination
 

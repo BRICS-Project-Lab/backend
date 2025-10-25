@@ -115,8 +115,7 @@ class PublicationSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
         model = Publication
         fields = [
             'id', 'title', 'authors', 'journal_conference',
-            'publication_date', 'doi', 'url', 'abstract', 'keywords',
-            'citation_count', 
+            'publication_date', 'doi', 'url',
             'ai_module_name', 'created_at'
         ]
     
@@ -153,10 +152,8 @@ class AIModuleDetailSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     class Meta:
         model = AIModuleDetail
         fields = [
-            'description', 'technical_info', 'architecture',
-            'training_data_description', 'metrics',
-            'supported_languages',
-            'requirements', 'installation_guide',
+            'description', 'technical_info', 'status',
+            'registration_system', 'registration_number', 'ability'
         ]
 
 class AIModuleTagSerializer(serializers.ModelSerializer):
@@ -175,7 +172,7 @@ class AIModuleListSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     
     created_by = UserProfileSerializer(
         read_only=True, 
-        fields=['id', 'username', 'first_name', 'last_name', 'organization']
+        fields=['username', 'first_name', 'last_name', 'organization']
     )
     tags = TagSerializer(
         source='get_tags', 

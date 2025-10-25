@@ -14,7 +14,7 @@ class AIModule(models.Model):
             return False
         if getattr(user, 'is_admin', None) and user.is_admin():
             return True
-        return self.created_by_id == user.id
+        return self.created_by.id == user.id
 
     class Status(models.TextChoices):
         DRAFT = 'draft', _('Draft')
@@ -30,11 +30,19 @@ class AIModule(models.Model):
     country = models.CharField(max_length=100, verbose_name=_('Country'))
     params_count = models.BigIntegerField(
         validators=[MinValueValidator(1)],
-        verbose_name=_('Parameters Count')
+        verbose_name=_('Parameters Count'),
+        default=10000000000
+        
     )
     task_short_description = models.TextField(
         max_length=500,
         verbose_name=_('Short Description')
+    )
+    license_type = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name=_('License Type'),
+        help_text=_('Type of license, e.g., MIT, Apache 2.0')
     )
     
     # Статус и модерация
@@ -62,9 +70,6 @@ class AIModule(models.Model):
         verbose_name=_('Published At')
     )
     
-    # SEO и поиск
-    meta_description = models.TextField(max_length=300, blank=True)
-    search_vector = models.TextField(blank=True)  # Для полнотекстового поиска
     
     version = models.CharField(
         max_length=50,
@@ -72,12 +77,7 @@ class AIModule(models.Model):
         verbose_name=_('Version')
     )
 
-    license_type = models.CharField(
-        max_length=100,
-        blank=True,
-        verbose_name=_('License Type'),
-        help_text=_('Type of license, e.g., MIT, Apache 2.0')
-    )
+    
 
     class Meta:
         verbose_name = _('AI Module')
@@ -114,6 +114,7 @@ class AIModule(models.Model):
         super().save(*args, **kwargs)
 
 class AIModuleDetail(models.Model):
+    
     """Детальная информация о модели"""
     ai_module = models.OneToOneField(
         AIModule,
@@ -124,23 +125,11 @@ class AIModuleDetail(models.Model):
     # Описание
     description = models.TextField(verbose_name=_('Description'))
     technical_info = models.TextField(verbose_name=_('Technical Information'))
-    
-    # Архитектурные детали
-    architecture = models.TextField(blank=True, verbose_name=_('Architecture'))
-    training_data_description = models.TextField(
-        blank=True,
-        verbose_name=_('Training Data Description')
-    )
-    metrics = models.JSONField(default=dict, blank=True, verbose_name=_('Metrics'))
-    
-    # Дополнительные поля
-    supported_languages = models.JSONField(default=list, blank=True)
-    requirements = models.TextField(blank=True, verbose_name=_('System Requirements'))
-    
-    installation_guide = models.TextField(
-        blank=True,
-        verbose_name=_('Installation Guide')
-    )
+    status = models.CharField(max_length=255, verbose_name=_('Status'), null=True)
+    registration_system = models.CharField(max_length=255, verbose_name=_('Registration system'), null=True)
+    registration_number = models.CharField(max_length=255, verbose_name=_('Registration number'), null=True)
+    ability = models.TextField(verbose_name=_('Ability for users'), null=True)
+
     class Meta:
         verbose_name = _('AI Module Details')
         verbose_name_plural = _('AI Module Details')

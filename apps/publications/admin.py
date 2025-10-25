@@ -4,7 +4,7 @@ from .models import Publication
 
 @admin.register(Publication)
 class PublicationAdmin(ImportExportModelAdmin):
-    list_display = ('title', 'ai_module', 'publication_date', 'journal_conference', 'citation_count')
+    list_display = ('title', 'ai_module', 'publication_date', 'journal_conference',)
     list_filter = ('publication_date', 'journal_conference')
     search_fields = ('title', 'authors', 'journal_conference', 'doi', 'ai_module__name')
     autocomplete_fields = ('ai_module',)

@@ -14,19 +14,16 @@ class Publication(models.Model):
     )
     
     title = models.CharField(max_length=500, verbose_name=_('Title'))
-    authors = models.TextField(verbose_name=_('Authors'))  # JSON или простой текст
+    authors = models.TextField(verbose_name=_('Authors'), blank=True)  # JSON или простой текст
     journal_conference = models.CharField(
         max_length=255,
-        verbose_name=_('Journal/Conference')
+        verbose_name=_('Journal/Conference'),
+        blank=True
     )
-    publication_date = models.DateField(verbose_name=_('Publication Date'))
+    publication_date = models.DateField(verbose_name=_('Publication Date'), blank=True)
     doi = models.CharField(max_length=100, blank=True, verbose_name=_('DOI'))
     url = models.URLField(blank=True, verbose_name=_('URL'))
     
-    # Дополнительные поля
-    abstract = models.TextField(blank=True, verbose_name=_('Abstract'))
-    keywords = models.JSONField(default=list, blank=True, verbose_name=_('Keywords'))
-    citation_count = models.PositiveIntegerField(default=0, verbose_name=_('Citations'))
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

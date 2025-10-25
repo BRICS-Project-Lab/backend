@@ -2455,3 +2455,102 @@ Traceback (most recent call last):
 django.core.exceptions.ImproperlyConfigured: Field name `authors_list` is not valid for model `Publication`.
 INFO 2025-10-16 20:22:38,743 autoreload 9978 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
 INFO 2025-10-16 20:22:39,401 autoreload 10036 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 15:35:14,571 autoreload 10036 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:36:02,491 autoreload 30624 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-25 16:36:06,689 log 30624 6142177280 Not Found: /
+INFO 2025-10-25 16:42:49,202 autoreload 31042 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:44:45,297 autoreload 31042 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 16:44:46,201 autoreload 31113 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:44:49,611 autoreload 31113 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 16:44:50,215 autoreload 31125 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:47:49,102 autoreload 31125 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:47:49,862 autoreload 31231 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-25 16:47:54,256 log 31231 6137311232 Internal Server Error: /admin/ai_modules/aimodule/13/change/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 1820, in _changeform_view
+    formsets, inline_instances = self._create_formsets(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 2257, in _create_formsets
+    for FormSet, inline in self.get_formsets_with_inlines(*get_formsets_args):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 907, in get_formsets_with_inlines
+    yield inline.get_formset(request, obj), inline
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/options.py", line 2436, in get_formset
+    return inlineformset_factory(self.parent_model, self.model, **defaults)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/forms/models.py", line 1322, in inlineformset_factory
+    FormSet = modelformset_factory(model, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/forms/models.py", line 1036, in modelformset_factory
+    form = modelform_factory(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/forms/models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/forms/models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (citation_count) specified for Publication
+INFO 2025-10-25 16:48:23,650 autoreload 31231 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 16:48:24,333 autoreload 31266 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:48:29,807 autoreload 31266 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/export_views.py changed, reloading.
+INFO 2025-10-25 16:48:30,399 autoreload 31283 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:48:36,965 autoreload 31283 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-25 16:48:37,522 autoreload 31293 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:48:38,862 autoreload 31293 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-25 16:48:39,413 autoreload 31299 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:48:45,922 autoreload 31299 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-25 16:48:46,574 autoreload 31314 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:48:51,002 autoreload 31314 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-25 16:48:51,490 autoreload 31331 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:51:37,431 autoreload 31331 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:51:37,977 autoreload 31465 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:51:39,228 autoreload 31465 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:51:39,853 autoreload 31468 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:51:41,217 autoreload 31468 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:51:41,733 autoreload 31472 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:51:46,164 autoreload 31472 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:51:46,747 autoreload 31486 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:52:09,906 autoreload 31486 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:52:10,677 autoreload 31512 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:52:13,075 autoreload 31512 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:52:13,669 autoreload 31521 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:52:36,606 autoreload 32024 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:56:57,160 autoreload 32024 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
+INFO 2025-10-25 16:56:57,893 autoreload 32276 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:58:22,669 autoreload 32276 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:58:23,393 autoreload 32335 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:58:25,800 autoreload 32335 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:58:26,307 autoreload 32348 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:58:27,632 autoreload 32348 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:58:27,950 autoreload 32350 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:58:33,223 autoreload 32350 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/models.py changed, reloading.
+INFO 2025-10-25 16:58:33,683 autoreload 32357 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 16:59:40,710 autoreload 32761 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:02:29,208 autoreload 32761 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:02:30,018 autoreload 32871 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:03:29,780 autoreload 32871 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:03:30,572 autoreload 32921 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-25 17:03:56,357 log 32921 6132690944 Not Found: /admin/ai_modules/import_csv.html
+INFO 2025-10-25 17:19:05,840 autoreload 32921 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:19:06,837 autoreload 33353 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:19:12,462 autoreload 33353 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:19:13,337 autoreload 33378 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:19:14,711 autoreload 33378 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:19:15,354 autoreload 33380 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:23:18,637 autoreload 33380 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/ai_modules/admin.py changed, reloading.
+INFO 2025-10-25 17:23:19,535 autoreload 33513 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-25 17:27:33,733 autoreload 33972 8765440320 Watching for file changes with StatReloader

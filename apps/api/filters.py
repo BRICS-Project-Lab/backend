@@ -179,11 +179,7 @@ class PublicationFilter(django_filters.FilterSet):
         lookup_expr='icontains'
     )
     
-    # Фильтр по цитируемости
-    min_citations = django_filters.NumberFilter(
-        field_name='citation_count',
-        lookup_expr='gte'
-    )
+  
     
     class Meta:
         model = Publication

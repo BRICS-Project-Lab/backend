@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import AIModule, AIModuleDetail
 
 class AIModuleTranslationOptions(TranslationOptions):
-    fields = ('name', 'task_short_description', 'meta_description')
+    fields = ('name', 'task_short_description')
 
 class AIModuleDetailTranslationOptions(TranslationOptions):
     fields = ('description', 'technical_info')

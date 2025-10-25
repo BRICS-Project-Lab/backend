@@ -1,0 +1,52 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}Импорт ИИ модулей{% endblock %}
+
+{% block content %}
+<div class="module">
+    <h1>Импорт ИИ модулей из CSV</h1>
+    
+    <div class="form-row">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for="id_csv_file">Выберите CSV файл:</label>
+                <input type="file" name="csv_file" id="id_csv_file" accept=".csv" required>
+            </div>
+            
+            <div class="submit-row">
+                <input type="submit" value="Импортировать" class="default">
+                <a href="{% url 'admin:ai_modules_aimodule_changelist' %}" class="button">Отмена</a>
+            </div>
+        </form>
+    </div>
+    
+    <div class="help">
+        <h3>Формат CSV файла:</h3>
+        <p>Файл должен содержать следующие колонки:</p>
+        <ul>
+            <li><strong>Страна</strong> - страна разработчика</li>
+            <li><strong>Название сервиса</strong> - название ИИ модуля</li>
+            <li><strong>Тип сервиса (услуги)</strong> - тип услуги</li>
+            <li><strong>Регистрационный номер</strong> - номер регистрации</li>
+            <li><strong>Область применения</strong> - область применения</li>
+            <li><strong>Тип технологии</strong> - используемые технологии</li>
+            <li><strong>Ключев. характеристики</strong> - ключевые характеристики</li>
+            <li><strong>Статус использования</strong> - статус использования</li>
+            <li><strong>Доступность</strong> - информация о доступности</li>
+            <li><strong>Научная база</strong> - научные публикации</li>
+            <li><strong>ПРИМЕЧАНИЕ</strong> - дополнительные заметки</li>
+            <li><strong>Страна Разработчика</strong> - страна разработчика</li>
+        </ul>
+        
+        <h3>Что будет создано:</h3>
+        <ul>
+            <li>AI модули с основной информацией</li>
+            <li>Детали модулей с техническими характеристиками</li>
+            <li>Теги для категоризации (тип сервиса, область применения, тип технологии)</li>
+            <li>Публикации из научной базы</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -216,7 +216,6 @@ class PublicationsExportView(APIView):
                 'url': pub.url,
                 'abstract': pub.abstract,
                 'keywords': pub.keywords,
-                'citation_count': pub.citation_count,
                 'ai_module': pub.ai_module.name,
                 'ai_module_company': pub.ai_module.company
             })
