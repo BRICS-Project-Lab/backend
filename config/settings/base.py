@@ -158,7 +158,14 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
-
+CSRF_TRUSTED_ORIGINS  = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
 # API Documentation
 SPECTACULAR_SETTINGS = {
     'TITLE': 'BRICS AI Registry API',

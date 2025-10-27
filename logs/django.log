@@ -2902,3 +2902,18 @@ INFO 2025-10-25 18:21:01,494 autoreload 44094 8765440320 /Users/firesieht/Docume
 INFO 2025-10-25 18:21:02,142 autoreload 44113 8765440320 Watching for file changes with StatReloader
 INFO 2025-10-25 18:21:07,713 autoreload 44113 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/serializers.py changed, reloading.
 INFO 2025-10-25 18:21:08,345 autoreload 44225 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-27 04:06:47,348 autoreload 73568 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-27 04:06:50,295 log 73568 6170718208 Not Found: /
+WARNING 2025-10-27 04:06:50,346 log 73568 6170718208 Not Found: /
+INFO 2025-10-27 17:43:41,352 autoreload 73568 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-27 17:43:42,345 autoreload 74679 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-27 17:46:00,027 autoreload 74679 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-27 17:46:00,962 autoreload 75129 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-27 17:46:26,450 autoreload 75129 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-27 17:46:27,053 autoreload 75155 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-27 17:46:28,463 autoreload 75155 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-27 17:46:29,083 autoreload 75170 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-27 17:46:44,015 autoreload 75170 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/config/settings/base.py changed, reloading.
+INFO 2025-10-27 17:46:44,596 autoreload 75183 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-27 17:47:12,987 log 75183 6163804160 Not Found: /
+WARNING 2025-10-27 17:47:13,188 log 75183 6163804160 Not Found: /
