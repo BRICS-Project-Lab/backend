@@ -11,7 +11,10 @@ router.register(r'tag-categories', viewsets.TagCategoryViewSet)
 router.register(r'publications', viewsets.PublicationViewSet)
 router.register(r'users', viewsets.UserViewSet)
 router.register(r'countries', viewsets.CountryViewSet)
-
+router.register(r'availability-ai-modules', viewsets.AvailabilityAIModulesViewSet, basename='Ai modules static')
+router.register(r'companies-ai-modules', viewsets.CompaniesAIModulesViewSet, basename='Ai modules static')
+router.register(r'statuses-ai-modules', viewsets.UsageStatusesAIModulesViewSet, basename='Ai modules static')
+router.register(r'estimators', viewsets.AIModuleViewSet, basename='estimators')
 # Вложенные роутеры для файлов модулей
 modules_router = routers.NestedDefaultRouter(router, r'ai-modules', lookup='ai_module')
 modules_router.register(r'files', viewsets.AIModuleFileViewSet, basename='aimodule-files')

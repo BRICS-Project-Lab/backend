@@ -37,7 +37,7 @@ class AIModuleTagInline(admin.TabularInline):
 
 @admin.register(AIModule)
 class AIModuleAdmin(admin.ModelAdmin):  # Убрали ImportExportModelAdmin
-    list_display = ('name', 'company', 'country', 'status', 'created_by', 'created_at')
+    list_display = ('name', 'name_ru', 'company', 'country', 'status', 'created_by', 'created_at')
     list_filter = ('status', 'country', 'created_at')
     search_fields = ('name', 'company', 'task_short_description', 'slug')
     readonly_fields = ('created_at', 'updated_at')
@@ -47,7 +47,7 @@ class AIModuleAdmin(admin.ModelAdmin):  # Убрали ImportExportModelAdmin
 
     fieldsets = (
         (_('Basic Information'), {
-            'fields': ('name', 'slug', 'company', 'country', 'params_count')
+            'fields': ('name', 'name_ru','slug', 'company', 'country', 'params_count')
         }),
         (_('Description'), {
             'fields': ('task_short_description',)

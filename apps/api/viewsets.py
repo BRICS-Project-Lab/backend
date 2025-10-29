@@ -12,7 +12,7 @@ from django.views.decorators.cache import cache_page
 from django.core.cache import cache
 from django.utils import timezone
 
-from apps.ai_modules.models import AIModule, AIModuleLike, AIModuleFile
+from apps.ai_modules.models import AIModule, AIModuleDetail, AIModuleLike, AIModuleFile
 from apps.tags.models import Tag, TagCategory, AIModuleTag
 from apps.publications.models import Publication
 from apps.accounts.models import User
@@ -21,12 +21,14 @@ from apps.common.models import Country, AuditLog
 from .serializers import (
     AIModuleListSerializer, AIModuleDetailSerializer, AIModuleCreateSerializer,
     TagSerializer, TagCategorySerializer, PublicationSerializer,
-    UserProfileSerializer, CountrySerializer, AIModuleFileSerializer
+    UserProfileSerializer, CountrySerializer, AIModuleFileSerializer, EstimatorSerializer
 )
 from .filters import AIModuleFilter, TagFilter, PublicationFilter
 from .permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, IsOwnerOrAdminOrReadOnly
 from .pagination import CustomPageNumberPagination
 from .throttling import BurstRateThrottle
+from transliterate import translit
+
 
 class AIModuleViewSet(viewsets.ModelViewSet):
     """
@@ -39,7 +41,16 @@ class AIModuleViewSet(viewsets.ModelViewSet):
     - поиск похожих модулей
     """
     
-    serializer_class = AIModuleDetailSerializer
+    def get_serializer_class(self):
+        """Выбор сериализатора в зависимости от действия"""
+        if self.action == 'list':
+            return EstimatorSerializer  # ИЗМЕНИТЬ с AIModuleListSerializer на EstimatorSerializer
+        elif self.action == 'create':
+            return AIModuleCreateSerializer
+        elif self.action in ['estimator', 'as_estimators']:
+            return EstimatorSerializer
+        return AIModuleDetailSerializer
+    
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = AIModuleFilter
     search_fields = ['name', 'company', 'task_short_description', 'details__description']
@@ -61,36 +72,24 @@ class AIModuleViewSet(viewsets.ModelViewSet):
         
         return [permission() for permission in permission_classes]
     
-    def get_serializer_class(self):
-        """Выбор сериализатора в зависимости от действия"""
-        if self.action == 'list':
-            return AIModuleListSerializer
-        elif self.action == 'create':
-            return AIModuleCreateSerializer
-        return AIModuleDetailSerializer
+
     
     def get_queryset(self):
         """Оптимизированный QuerySet с prefetch_related"""
         queryset = AIModule.objects.select_related(
-            'created_by'
+            'created_by',
+            'details'  # ДОБАВИТЬ для доступа к details в сериализаторе
         ).prefetch_related(
             'likes',
+            'publications',  # ДОБАВИТЬ для scientific_papers
             Prefetch(
                 'aimoduletag_set',
                 queryset=AIModuleTag.objects.select_related('tag__category')
             )
         )
         
-        # Фильтр по статусу для обычных пользователей
         if not (self.request.user.is_authenticated and self.request.user.is_admin()):
             queryset = queryset.filter(status=AIModule.Status.ACTIVE)
-        
-        # Для детального просмотра добавляем дополнительные связи
-        if self.action == 'retrieve':
-            queryset = queryset.select_related('details').prefetch_related(
-                'publications',
-                'files'
-            )
         
         # Аннотация количества лайков
         queryset = queryset.annotate(
@@ -378,6 +377,31 @@ class AIModuleViewSet(viewsets.ModelViewSet):
             'comment': comment
         })
 
+    @action(detail=True, methods=['get'], url_path='estimator')
+    def estimator(self, request, pk=None):
+        """
+        Специальное представление одного модуля в интерфейсе EstimatorItem.
+        URL: /api/estimators/{id}/estimator/
+        """
+        instance = self.get_object()
+        # Желательно иметь prefetch: publications, aimoduletag__tag__category, details
+        serializer = EstimatorSerializer(instance, context={'request': request})
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], url_path='as-estimators')
+    def as_estimators(self, request):
+        """
+        Список модулей в формате EstimatorItem.
+        URL: /api/estimators/as-estimators/
+        """
+        qs = self.filter_queryset(self.get_queryset().select_related('details').prefetch_related('publications'))
+        page = self.paginate_queryset(qs)
+        if page is not None:
+            data = EstimatorSerializer(page, many=True, context={'request': request}).data
+            return self.get_paginated_response(data)
+        data = EstimatorSerializer(qs, many=True, context={'request': request}).data
+        return Response(data)
+
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     """
     ViewSet для тегов (только чтение).
@@ -388,9 +412,9 @@ class TagViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TagSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = TagFilter
-    search_fields = ['name', 'description']
-    ordering_fields = ['name', 'created_at', 'usage_count']
-    ordering = ['category__order', 'name']
+    search_fields = ['name', 'name_ru', 'description']
+    ordering_fields = ['name','name_ru', 'created_at', 'usage_count']
+    ordering = ['category__order', 'name', 'name_ru']
     pagination_class = CustomPageNumberPagination
     
     def get_queryset(self):
@@ -421,6 +445,7 @@ class TagViewSet(viewsets.ReadOnlyModelViewSet):
             result.append({
                 'id': category.id,
                 'name': category.name,
+                'name_ru':category.name_ru,
                 'description': category.description,
                 'tags': TagSerializer(tags, many=True, context={'request': request}).data
             })
@@ -432,7 +457,7 @@ class TagCategoryViewSet(viewsets.ReadOnlyModelViewSet):
     
     queryset = TagCategory.objects.filter(is_active=True).prefetch_related('tags')
     serializer_class = TagCategorySerializer
-    ordering = ['order', 'name']
+    ordering = ['order', 'name', 'name_ru']
     pagination_class = None  # Отключаем пагинацию для категорий
 
 class PublicationViewSet(viewsets.ReadOnlyModelViewSet):
@@ -538,3 +563,63 @@ class AIModuleFileViewSet(viewsets.ModelViewSet):
             ai_module=ai_module,
             uploaded_by=self.request.user
         )
+
+class AvailabilityAIModulesViewSet(viewsets.ViewSet):
+    """
+    ViewSet для получения уникальных значений поля 'availability' из модели AIModuleDetail.
+    """
+    permission_classes = []
+
+
+    def list(self, request):
+        unique_availability_ids = AIModuleDetail.objects.values_list('ability', flat=True).distinct().exclude(ability__isnull=True)
+        answer = [{
+            "id": i+1,
+            "name": translit(name, 'ru', reversed=True),
+            "name_ru": name,
+            "created_at": "2025-10-25T12:00:00Z",
+            "updated_at": "2025-10-25T12:00:00Z"
+        }  for i, name in enumerate(unique_availability_ids)]
+
+        return Response(answer)
+
+class UsageStatusesAIModulesViewSet(viewsets.ViewSet):
+    """
+    ViewSet для получения уникальных значений поля 'status' из модели AIModuleDetail.
+    """
+    permission_classes = []
+
+
+    def list(self, request):
+        unique_availability_ids = AIModuleDetail.objects.values_list('status', flat=True).distinct().exclude(status__isnull=True)
+        answer = [{
+            "id": i+1,
+            "name": translit(name, 'ru', reversed=True),
+            "name_ru": name,
+            "created_at": "2025-10-25T12:00:00Z",
+            "updated_at": "2025-10-25T12:00:00Z"
+        }  for i, name in enumerate(unique_availability_ids)]
+
+        return Response(answer)
+
+class CompaniesAIModulesViewSet(viewsets.ViewSet):
+    """
+    ViewSet для получения уникальных значений поля 'сompany' из модели AIModule.
+    """
+    permission_classes = []
+
+
+    def list(self, request):
+        unique_availability_ids = AIModule.objects.values_list('company', flat=True).distinct().exclude(company__isnull=True)
+        unique_availability_ids = list(set(unique_availability_ids))
+
+        answer = [{
+            "id": i+1,
+            "name": translit(name, 'ru', reversed=True),
+            "name_ru": name,
+            "created_at": "2025-10-25T12:00:00Z",
+            "updated_at": "2025-10-25T12:00:00Z",
+            "code": name
+        }  for i, name in enumerate(unique_availability_ids)]
+
+        return Response(answer)

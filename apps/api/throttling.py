@@ -2,15 +2,18 @@ from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 
 class BurstRateThrottle(UserRateThrottle):
     """Ограничение для пиковых нагрузок"""
-    scope = 'burst'
+    # scope = 'burst'
+    pass
 
 class SustainedRateThrottle(UserRateThrottle):
     """Ограничение для продолжительных нагрузок"""
-    scope = 'sustained'
+    # scope = 'sustained'
+    pass
 
 class LoginRateThrottle(AnonRateThrottle):
     """Ограничение для попыток входа"""
-    scope = 'login'
+    # scope = 'login'
+    pass
 
 # Настройки в settings.py:
 # REST_FRAMEWORK = {

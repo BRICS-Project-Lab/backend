@@ -5,6 +5,14 @@ from django.contrib.auth import get_user_model
 from apps.ai_modules.models import AIModule, AIModuleDetail
 from apps.tags.models import Tag, TagCategory, AIModuleTag
 from apps.publications.models import Publication
+from deep_translator import GoogleTranslator
+from apps.common.models import Country
+
+def ru_to_en(text: str) -> str:
+    if not text:
+        return text
+    return GoogleTranslator(source='auto', target='en').translate(text)
+
 
 User = get_user_model()
 
@@ -25,31 +33,37 @@ class Command(BaseCommand):
         
         # Создаем категории тегов
         service_type_category, _ = TagCategory.objects.get_or_create(
-            name='Тип сервиса (Услуги)',
+            name_ru='Тип сервиса (Услуги)',
+            name='Type of service',
             defaults={'slug': 'service-type', 'description': 'Типы ИИ сервисов'}
         )
         
         application_area_category, _ = TagCategory.objects.get_or_create(
-            name='Область применения',
+            name_ru='Область применения',
+            name='Scope of application',
             defaults={'slug': 'application-area', 'description': 'Области применения ИИ'}
         )
         
         technology_type_category, _ = TagCategory.objects.get_or_create(
-            name='Тип технологии',
+            name_ru='Тип технологии',
+            name='Type of technologes',
             defaults={'slug': 'technology-type', 'description': 'Типы технологий'}
         )
         
         with open(csv_file, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
-            print("FHFJFJFJFJF")
-            print(reader)
             for row_num, row in enumerate(reader, 1):
                 try:
+                    country, flag = Country.objects.get_or_create(
+                        name=ru_to_en(row['Страна '].strip()),
+                        name_ru=ru_to_en(row['Страна '].strip())
+                    )
                     # Создаем AI модуль
                     ai_module = AIModule.objects.create(
-                        name=row['Название сервиса'].strip(),
+                        name=ru_to_en(row['Название сервиса'].strip()),
+                        name_ru=row['Название сервиса'].strip(),
                         company=row['Страна Разработчика'].strip(),
-                        country=row['Страна '].strip(),
+                        country=country,
                         status=AIModule.Status.ACTIVE,
                         params_count=10000000000,
                         license_type="MIT",
@@ -99,7 +113,7 @@ class Command(BaseCommand):
                             added_by=admin_user
                         )
                     
-                    self.stdout.write(f'✓ Row {row_num}: {ai_module.name}')
+                    self.stdout.write(f'✓ Row {row_num}: {ai_module.name_ru}')
                     
                 except Exception as e:
                     self.stdout.write(
@@ -130,8 +144,9 @@ class Command(BaseCommand):
             category=category,
             slug=tag_slug,
             defaults={
-                'name': tag_text,
-                'description': f'Тег для {category.name}',
+                'name_ru': tag_text,
+                'name':ru_to_en(tag_text),
+                'description': f'Тег для {category.name_ru}',
                 'is_active': True
             }
         )

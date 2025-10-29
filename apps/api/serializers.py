@@ -7,6 +7,7 @@ from apps.tags.models import Tag, TagCategory, AIModuleTag
 from apps.publications.models import Publication
 from apps.accounts.models import UserProfile
 from apps.common.models import Country
+from transliterate import translit
 
 User = get_user_model()
 
@@ -34,7 +35,7 @@ class CountrySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Country
-        fields = ['id', 'name', 'code', 'is_brics_member', 'flag_emoji']
+        fields = ['id', 'name', 'name_ru', 'code', 'is_brics_member', 'flag_emoji']
 
 class UserProfileSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     """Сериализатор для профиля пользователя"""
@@ -81,7 +82,7 @@ class TagSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = [
-            'id', 'name', 'slug', 'description', 'color', 'color_display',
+            'id', 'name', 'name_ru', 'slug', 'description', 'color', 'color_display',
             'category_name', 'usage_count', 'is_active'
         ]
     
@@ -101,7 +102,7 @@ class TagCategorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = TagCategory
-        fields = ['id', 'name', 'slug', 'description', 'order', 'tags', 'tags_count']
+        fields = ['id', 'name','name_ru', 'slug', 'description', 'order', 'tags', 'tags_count']
     
     def get_tags_count(self, obj):
         return obj.tags.filter(is_active=True).count()
@@ -428,7 +429,7 @@ class AIModuleExportSerializer(serializers.ModelSerializer):
     class Meta:
         model = AIModule
         fields = [
-            'id', 'name', 'company', 'country', 'params_count',
+            'id', 'name','name_ru', 'company', 'country', 'params_count',
             'task_short_description', 'status', 'status_display',
             'version', 'license_type', 'created_by_name', 'created_at',
             'tags_list'
@@ -436,3 +437,247 @@ class AIModuleExportSerializer(serializers.ModelSerializer):
     
     def get_tags_list(self, obj):
         return ', '.join([tag.name for tag in obj.get_tags()])
+
+
+
+
+
+
+###############
+
+
+
+
+class EstimatorAvailabilitySerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    name_ru = serializers.CharField()
+    created_at = serializers.DateTimeField()
+    updated_at = serializers.DateTimeField()
+
+
+class EstimatorGenericStatusSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    name_ru = serializers.CharField()
+    created_at = serializers.DateTimeField()
+    updated_at = serializers.DateTimeField()
+
+
+class PublicationForEstimatorSerializer(serializers.ModelSerializer):
+    journal_or_conference = serializers.CharField(source='journal_conference', allow_blank=True, required=False)
+    publication_year = serializers.SerializerMethodField()
+    abstract = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Publication
+        fields = ('id', 'title', 'authors', 'abstract', 'journal_or_conference',
+                  'publication_year', 'doi', 'url', 'created_at', 'updated_at')
+
+    def get_publication_year(self, obj):
+        if obj.publication_date:
+            return str(obj.publication_date.year)
+        return None
+
+    def get_abstract(self, obj):
+        return getattr(obj, 'abstract', '') or ''
+
+
+class SimpleTagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ('id', 'name', 'name_ru', 'created_at', 'updated_at')
+
+
+class EstimatorSerializer(serializers.ModelSerializer):
+    # owner
+    owner = serializers.SerializerMethodField()
+
+    # страны (синтезируем из строки ai_module.country)
+    developer_country = serializers.SerializerMethodField()
+    application_country = serializers.SerializerMethodField()
+
+    # одиночные объекты (не null, но могут быть пустыми объектами)
+    availability = serializers.SerializerMethodField()
+    usage_status = serializers.SerializerMethodField()
+
+    # массивы тегов по категориям
+    tasks = serializers.SerializerMethodField()
+    anatomical_areas = serializers.SerializerMethodField()
+    technologies = serializers.SerializerMethodField()
+    languages = serializers.SerializerMethodField()
+
+    # публикации
+    scientific_papers = PublicationForEstimatorSerializer(source='publications', many=True, read_only=True)
+
+    # простые маппинги
+    title = serializers.CharField(source='name', read_only=True)
+    developer_company = serializers.CharField(source='company', read_only=True)
+    parameter_count = serializers.IntegerField(source='params_count', read_only=True)
+    key_characteristics = serializers.SerializerMethodField()
+
+    class Meta:
+        model = AIModule
+        fields = (
+            'id',
+            'owner',
+            'developer_country',
+            'application_country',
+            'availability',
+            'usage_status',
+            'tasks',
+            'anatomical_areas',
+            'technologies',
+            'scientific_papers',
+            'languages',
+            'created_at',
+            'updated_at',
+            'title',
+            'developer_company',
+            'parameter_count',
+            'task_short_description',
+            'key_characteristics',
+        )
+
+    def get_owner(self, obj):
+        u = getattr(obj, 'created_by', None)
+        if not u:
+            return {
+                'id': 0,
+                'username': '',
+                'email': '',
+                'first_name': '',
+                'last_name': '',
+                'is_staff': False,
+                'is_active': False,
+                'date_joined': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+            }
+        return {
+            'id': u.id,
+            'username': u.username or '',
+            'email': getattr(u, 'email', '') or '',
+            'first_name': getattr(u, 'first_name', '') or '',
+            'last_name': getattr(u, 'last_name', '') or '',
+            'is_staff': getattr(u, 'is_staff', False),
+            'is_active': getattr(u, 'is_active', True),
+            'date_joined': getattr(u, 'date_joined', obj.created_at).isoformat() if hasattr(getattr(u, 'date_joined', obj.created_at), 'isoformat') else str(getattr(u, 'date_joined', obj.created_at)),
+        }
+
+    def get_developer_country(self, obj):
+        return {
+            'id': obj.country.id,
+            'name': obj.country.name,
+            'name_ru': obj.country.name_ru,
+            'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+            'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+            'code': obj.country.code,
+        }
+
+    def get_application_country(self, obj):
+        return {
+            'id': obj.country.id,
+            'name': obj.country.name,
+            'name_ru': obj.country.name_ru,
+            'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+            'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+            'code': obj.country.code,
+        }
+
+        # return synth_country_from_str(country_str, obj.created_at, obj.updated_at) or {
+        #     'id': 0,
+        #     'name': '',
+        #     'name_ru': '',
+        #     'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+        #     'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+        #     'code': '',
+        # }
+
+    def _first_or_none(self, qs):
+        item = qs.first()
+        if not item:
+            return None
+        return SimpleTagSerializer(item).data
+
+    def _tags_by_cat(self, obj, names: list[str]):
+        from django.db.models import Q
+        return Tag.objects.filter(
+            aimoduletag__ai_module=obj, is_active=True
+        ).filter(
+            Q(category__name__in=names) | Q(category__name_ru__in=names)
+        ).order_by('name')
+
+    def get_availability(self, obj):
+        # Берём первый тег из категории Доступности, отдаём как одиночный объект
+        tag = self._first_or_none(self._tags_by_cat(obj, ['Availability Status', 'Доступность', 'Статусы доступности']))
+        if tag:
+            return tag
+        # Фоллбек: из details.ability
+        details = getattr(obj, 'details', None)
+        name_ru = getattr(details, 'ability', None) if details else None
+        if not name_ru:
+            return {
+                'id': 0,
+                'name': '',
+                'name_ru': '',
+                'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+                'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+            }
+        try:
+            name_en = translit(name_ru, 'ru', reversed=True)
+        except Exception:
+            name_en = name_ru
+        return {
+            'id': 0,
+            'name': name_en,
+            'name_ru': name_ru,
+            'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+            'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+        }
+
+    def get_usage_status(self, obj):
+        # Если есть теговая категория статусов — берём 1-й тег
+        tag = self._first_or_none(self._tags_by_cat(obj, ['Statuses', 'Статусы', 'Generic Status']))
+        if tag:
+            return tag
+        # Фоллбек: из details.status или поля obj.status
+        details = getattr(obj, 'details', None)
+        status_ru = (getattr(details, 'status', None) if details else None) or getattr(obj, 'status', None)
+        if not status_ru:
+            return {
+                'id': 0,
+                'name': '',
+                'name_ru': '',
+                'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+                'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+            }
+        try:
+            status_en = translit(str(status_ru), 'ru', reversed=True)
+        except Exception:
+            status_en = str(status_ru)
+        return {
+            'id': 0,
+            'name': status_en,
+            'name_ru': str(status_ru),
+            'created_at': obj.created_at.isoformat() if hasattr(obj.created_at, 'isoformat') else str(obj.created_at),
+            'updated_at': obj.updated_at.isoformat() if hasattr(obj.updated_at, 'isoformat') else str(obj.updated_at),
+        }
+
+    def get_tasks(self, obj):
+        return SimpleTagSerializer(self._tags_by_cat(obj, ['Tasks', 'Задачи']), many=True).data or []
+
+    def get_anatomical_areas(self, obj):
+        return SimpleTagSerializer(self._tags_by_cat(obj, ['Anatomical Areas', 'Анатомические области']), many=True).data or []
+
+    def get_technologies(self, obj):
+        return SimpleTagSerializer(self._tags_by_cat(obj, ['Technologies', 'Технологии', 'Тип технологии']), many=True).data or []
+
+    def get_languages(self, obj):
+        return SimpleTagSerializer(self._tags_by_cat(obj, ['Languages', 'Языки']), many=True).data or []
+
+    def get_key_characteristics(self, obj):
+        details = getattr(obj, 'details', None)
+        for f in ('technical_info', 'description'):
+            v = getattr(details, f, None) if details else None
+            if v:
+                return v
+        return ''

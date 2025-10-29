@@ -49,8 +49,9 @@ class AuditLog(models.Model):
 class Country(models.Model):
     """Справочник стран БРИКС"""
     
-    name = models.CharField(max_length=100, unique=True)
-    code = models.CharField(max_length=3, unique=True)  # BRA, RUS, IND, CHN, ZAF
+    name = models.CharField(max_length=100, unique=True) # eng name
+    code = models.CharField(max_length=3, unique=True, blank=True, null=True)  # BRA, RUS, IND, CHN, ZAF
+    name_ru = models.CharField(max_length=100, blank=True, null=True)
     is_brics_member = models.BooleanField(default=True)
     flag_emoji = models.CharField(max_length=10, blank=True)
     

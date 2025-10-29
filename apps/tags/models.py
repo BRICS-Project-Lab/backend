@@ -2,12 +2,14 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+
 User = get_user_model()
 
 class TagCategory(models.Model):
     """Категории тегов"""
     
-    name = models.CharField(max_length=1024, unique=True, verbose_name=_('Name'))
+    name = models.CharField(max_length=1024, unique=True, verbose_name=_('Name')) # eng name
+    name_ru =  models.CharField(max_length=1024, blank=True, null=True, verbose_name=_('Name ru'))
     slug = models.SlugField(max_length=1024, unique=True)
     description = models.TextField(blank=True, verbose_name=_('Description'))
     order = models.PositiveIntegerField(default=0, verbose_name=_('Order'))
@@ -29,7 +31,9 @@ class Tag(models.Model):
         on_delete=models.CASCADE,
         related_name='tags'
     )
-    name = models.CharField(max_length=1024, verbose_name=_('Name'))
+    name = models.CharField(max_length=1024, verbose_name=_('Name')) # name eng
+    name_ru = models.CharField(max_length=1024, blank=True, null=True, verbose_name=_('Name ru'))
+
     slug = models.SlugField(max_length=1024)
     description = models.TextField(blank=True, verbose_name=_('Description'))
     color = models.CharField(max_length=7, blank=True, verbose_name=_('Color'))  # HEX цвет

@@ -1,0 +1,47 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block title %}Импорт публикаций{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:publications_publication_changelist' %}">{% trans 'Publications' %}</a>
+    &rsaquo; {% trans 'Импорт публикаций' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Импорт публикаций из CSV</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <fieldset class="module">
+        <h2>Загрузите CSV файл</h2>
+        <p>
+            Формат CSV файла должен содержать следующие колонки:
+        </p>
+        <ul>
+            <li><strong>title</strong> - Название публикации</li>
+            <li><strong>authors</strong> - Авторы</li>
+            <li><strong>journal_or_conference</strong> - Журнал/Конференция</li>
+            <li><strong>publication_year</strong> - Год публикации</li>
+            <li><strong>doi</strong> - DOI публикации</li>
+            <li><strong>url</strong> - URL публикации</li>
+        </ul>
+        
+        <input type="file" name="csv_file" accept=".csv" required>
+        
+        <p class="help">
+            Примечание: Если в базе нет AI модулей, будет создан первый доступный модуль.
+            Публикации будут привязаны к первому AI модулю в базе.
+        </p>
+    </fieldset>
+    
+    <div class="submit-row">
+        <input type="submit" value="Импортировать" class="default">
+        <a href="{% url 'admin:publications_publication_changelist' %}" class="button">Отмена</a>
+    </div>
+</form>
+{% endblock %}

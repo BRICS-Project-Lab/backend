@@ -10,7 +10,10 @@ class Publication(models.Model):
     ai_module = models.ForeignKey(
         'ai_modules.AIModule',
         on_delete=models.CASCADE,
-        related_name='publications'
+        null=True,
+        blank=True,
+        related_name='publications',
+        verbose_name=_('AI Module')
     )
     
     title = models.CharField(max_length=500, verbose_name=_('Title'))

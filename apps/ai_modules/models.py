@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
 from django.utils.text import slugify
-
+from apps.common.models import Country
 User = get_user_model()
 
 class AIModule(models.Model):
@@ -24,10 +24,17 @@ class AIModule(models.Model):
         BLOCKED = 'blocked', _('Blocked')
     
     # Основные поля
-    name = models.CharField(max_length=1024, verbose_name=_('Name'))
+    name = models.CharField(max_length=1024, verbose_name=_('Name')) # eng name
+    name_ru = models.CharField(max_length=1024, blank=True, null=True, verbose_name=_('Name ru'))
     slug = models.SlugField(max_length=1024, unique=True)
     company = models.CharField(max_length=1024, verbose_name=_('Company'))
-    country = models.CharField(max_length=1024, verbose_name=_('Country'))
+    # country = models.CharField(max_length=1024, verbose_name=_('Country'))
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.CASCADE,
+        related_name='country',
+        verbose_name=_('Country')
+    )
     params_count = models.BigIntegerField(
         validators=[MinValueValidator(1)],
         verbose_name=_('Parameters Count'),
@@ -127,7 +134,7 @@ class AIModuleDetail(models.Model):
     technical_info = models.TextField(verbose_name=_('Technical Information'))
     status = models.CharField(max_length=255, verbose_name=_('Status'), null=True)
     registration_system = models.CharField(max_length=255, verbose_name=_('Registration system'), null=True)
-    registration_number = models.CharField(max_length=255, verbose_name=_('Registration number'), null=True)
+    registration_number = models.CharField(max_length=1024, verbose_name=_('Registration number'), null=True)
     ability = models.TextField(verbose_name=_('Ability for users'), null=True)
 
     class Meta:
