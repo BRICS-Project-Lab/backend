@@ -5551,3 +5551,366 @@ INFO 2025-10-29 21:08:01,219 autoreload 54117 8765440320 /Users/firesieht/Docume
 INFO 2025-10-29 21:08:01,733 autoreload 54166 8765440320 Watching for file changes with StatReloader
 INFO 2025-10-29 21:08:09,373 autoreload 54166 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
 INFO 2025-10-29 21:08:09,949 autoreload 54281 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 21:31:46,560 autoreload 74183 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 21:36:41,644 autoreload 78159 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-29 21:36:47,895 log 78159 6239432704 Internal Server Error: /api/v1/statuses-ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 595, in list
+    answer = [{
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 597, in <listcomp>
+    "name": translit(name, 'ru', reversed=True),
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/transliterate/utils.py", line 89, in translit
+    raise LanguagePackNotFound(
+transliterate.exceptions.LanguagePackNotFound: Language pack for code ru is not found.
+ERROR 2025-10-29 21:36:47,897 log 78159 6222606336 Internal Server Error: /api/v1/availability-ai-modules/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 576, in list
+    answer = [{
+  File "/Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py", line 578, in <listcomp>
+    "name": translit(name, 'ru', reversed=True),
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/transliterate/utils.py", line 89, in translit
+    raise LanguagePackNotFound(
+transliterate.exceptions.LanguagePackNotFound: Language pack for code ru is not found.
+ERROR 2025-10-29 22:42:43,222 exception 78159 6171553792 Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-10-29 22:42:43,253 log 78159 6171553792 Bad Request: /
+ERROR 2025-10-29 22:42:43,323 exception 78159 6188380160 Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-10-29 22:42:43,334 log 78159 6188380160 Bad Request: /favicon.ico
+INFO 2025-10-29 22:50:10,015 autoreload 78159 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-29 22:50:10,986 autoreload 32612 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:12,314 autoreload 32612 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-29 22:50:12,789 autoreload 32660 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:15,183 autoreload 32660 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-29 22:50:15,677 autoreload 32694 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:17,142 autoreload 32694 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-29 22:50:17,739 autoreload 32735 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:29,430 autoreload 32735 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-29 22:50:29,921 autoreload 32885 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:46,871 autoreload 32885 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/pagination.py changed, reloading.
+INFO 2025-10-29 22:50:47,373 autoreload 33113 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-29 22:50:50,835 autoreload 33113 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/pagination.py changed, reloading.
+INFO 2025-10-29 22:50:51,419 autoreload 33175 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 08:07:22,835 autoreload 33175 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-30 08:07:23,843 autoreload 75265 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 08:22:07,788 autoreload 75265 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 08:22:08,686 autoreload 86163 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 08:23:33,031 autoreload 86163 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 08:23:33,869 autoreload 87210 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 08:30:23,705 autoreload 87210 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 08:30:24,798 autoreload 92316 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:15:17,914 autoreload 92316 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:15:19,085 autoreload 4228 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:16:19,130 autoreload 4228 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:16:19,845 autoreload 4993 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:16:25,401 autoreload 4993 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:16:26,012 autoreload 5078 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:16:27,512 autoreload 5078 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:16:28,195 autoreload 5110 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:08,994 autoreload 5110 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:09,865 autoreload 9312 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:37,343 autoreload 9312 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:38,159 autoreload 9678 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:41,621 autoreload 9678 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:42,329 autoreload 9739 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:43,715 autoreload 9739 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:44,437 autoreload 9773 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:45,830 autoreload 9773 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:46,521 autoreload 9799 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:48,939 autoreload 9799 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:49,583 autoreload 9843 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:50,948 autoreload 9843 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:51,533 autoreload 9870 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:22:58,307 autoreload 9870 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:22:58,937 autoreload 9968 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:23:00,336 autoreload 9968 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:23:00,985 autoreload 10002 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:29:26,613 autoreload 10002 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:29:27,441 autoreload 14780 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:31:05,585 autoreload 14780 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:31:06,614 autoreload 16023 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:31:08,008 autoreload 16023 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:31:08,644 autoreload 16063 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:31:11,057 autoreload 16063 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:31:11,757 autoreload 16095 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-30 12:34:21,528 log 16095 6140686336 Internal Server Error: /api/v1/estimators/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/rest_framework/backends.py", line 74, in filter_queryset
+    return filterset.qs
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 230, in qs
+    qs = self.filter_queryset(qs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 213, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filters.py", line 158, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ability' into field. Choices are: aimoduletag, company, country, country_id, created_at, created_by, created_by_id, details, files, id, license_type, like_count, likes, name, name_ru, params_count, publications, published_at, slug, status, task_short_description, updated_at, version
+INFO 2025-10-30 12:34:44,082 autoreload 16095 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:34:44,894 autoreload 18736 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-30 12:34:51,253 log 18736 6173372416 Internal Server Error: /api/v1/estimators/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/rest_framework/backends.py", line 74, in filter_queryset
+    return filterset.qs
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 230, in qs
+    qs = self.filter_queryset(qs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 213, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filters.py", line 158, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ability' into field. Choices are: aimoduletag, company, country, country_id, created_at, created_by, created_by_id, details, files, id, license_type, like_count, likes, name, name_ru, params_count, publications, published_at, slug, status, task_short_description, updated_at, version
+ERROR 2025-10-30 12:35:27,811 log 18736 6173372416 Internal Server Error: /api/v1/estimators/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/rest_framework/backends.py", line 74, in filter_queryset
+    return filterset.qs
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 230, in qs
+    qs = self.filter_queryset(qs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 213, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filters.py", line 158, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ability' into field. Choices are: aimoduletag, company, country, country_id, created_at, created_by, created_by_id, details, files, id, license_type, like_count, likes, name, name_ru, params_count, publications, published_at, slug, status, task_short_description, updated_at, version
+INFO 2025-10-30 12:36:40,741 autoreload 18736 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-30 12:36:41,761 autoreload 20208 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:36:49,254 autoreload 20208 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-30 12:36:49,824 autoreload 20319 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:36:51,067 autoreload 20319 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-30 12:36:51,720 autoreload 20355 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:38:38,722 autoreload 20355 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/viewsets.py changed, reloading.
+INFO 2025-10-30 12:38:39,639 autoreload 21716 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-30 12:38:42,190 log 21716 6138376192 Internal Server Error: /api/v1/estimators/
+Traceback (most recent call last):
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/rest_framework/backends.py", line 74, in filter_queryset
+    return filterset.qs
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 230, in qs
+    qs = self.filter_queryset(qs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filterset.py", line 213, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django_filters/filters.py", line 158, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/firesieht/Library/Python/3.9/lib/python/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'aimoduledetailed' into field. Choices are: aimoduletag, company, country, country_id, created_at, created_by, created_by_id, details, files, id, license_type, like_count, likes, name, name_ru, params_count, publications, published_at, slug, status, task_short_description, updated_at, version
+INFO 2025-10-30 12:38:54,820 autoreload 21716 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:38:55,557 autoreload 21941 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:38:56,987 autoreload 21941 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:38:57,566 autoreload 21984 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:39:00,021 autoreload 21984 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:39:00,752 autoreload 22042 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:50:34,230 autoreload 22042 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:50:35,107 autoreload 30504 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 12:50:41,735 autoreload 30504 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 12:50:42,316 autoreload 30612 8765440320 Watching for file changes with StatReloader
+ERROR 2025-10-30 13:02:51,717 exceptions 30612 6205796352 API Error in AIModuleViewSet: {'tags': [ErrorDetail(string='Select a valid choice. 37 is not one of the available choices.', code='invalid_choice')]}
+WARNING 2025-10-30 13:02:51,718 log 30612 6205796352 Bad Request: /api/v1/estimators/
+ERROR 2025-10-30 13:03:18,636 exceptions 30612 6205222912 API Error in AIModuleViewSet: {'tags': [ErrorDetail(string='Select a valid choice. 12 is not one of the available choices.', code='invalid_choice')]}
+WARNING 2025-10-30 13:03:18,637 log 30612 6205222912 Bad Request: /api/v1/estimators/
+ERROR 2025-10-30 13:03:24,615 exceptions 30612 6205222912 API Error in AIModuleViewSet: {'tags': [ErrorDetail(string='Select a valid choice. 40 is not one of the available choices.', code='invalid_choice')]}
+WARNING 2025-10-30 13:03:24,615 log 30612 6205222912 Bad Request: /api/v1/estimators/
+ERROR 2025-10-30 13:03:27,745 exceptions 30612 6205222912 API Error in AIModuleViewSet: {'tags': [ErrorDetail(string='Select a valid choice. 3 is not one of the available choices.', code='invalid_choice')]}
+WARNING 2025-10-30 13:03:27,746 log 30612 6205222912 Bad Request: /api/v1/estimators/
+INFO 2025-10-30 13:03:54,752 autoreload 30612 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:03:55,625 autoreload 40356 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:04:00,189 autoreload 40356 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:04:00,769 autoreload 40437 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:04:03,221 autoreload 40437 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:04:03,823 autoreload 40475 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:04:05,336 autoreload 40475 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:04:05,953 autoreload 40507 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:04:18,830 autoreload 40507 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:04:19,627 autoreload 40684 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:05:50,305 autoreload 40684 8765440320 /Users/firesieht/Documents/programming/BRICS/backend/apps/api/filters.py changed, reloading.
+INFO 2025-10-30 13:05:51,135 autoreload 41799 8765440320 Watching for file changes with StatReloader
+INFO 2025-10-30 13:17:21,077 autoreload 50472 8765440320 Watching for file changes with StatReloader
+WARNING 2025-10-30 13:17:24,079 log 50472 10771050496 Not Found: /
+INFO 2025-10-30 13:30:10,553 autoreload 60162 8765440320 Watching for file changes with StatReloader

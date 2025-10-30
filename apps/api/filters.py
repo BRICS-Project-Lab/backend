@@ -11,19 +11,21 @@ class AIModuleFilter(django_filters.FilterSet):
     
     # Текстовые фильтры
     name = django_filters.CharFilter(lookup_expr='icontains')
-    company = django_filters.CharFilter(lookup_expr='icontains')
-    
-    # Фильтры диапазонов
-    params_count_min = django_filters.NumberFilter(
-        field_name='params_count',
-        lookup_expr='gte'
+    # company = django_filters.CharFilter(lookup_expr='icontains')
+    companies = django_filters.BaseInFilter(field_name='company', lookup_expr='in')
+    country_names = django_filters.BaseInFilter(
+        field_name='country__name',
+        lookup_expr='in'
     )
-    params_count_max = django_filters.NumberFilter(
-        field_name='params_count',
-        lookup_expr='lte'
+
+
+
+    tags = django_filters.BaseInFilter(
+        field_name='aimoduletag__tag',
+        lookup_expr='in'
     )
+
     
-    # Фильтры по тегам
     tags = django_filters.ModelMultipleChoiceFilter(
         field_name='aimoduletag__tag',
         queryset=Tag.objects.filter(is_active=True),
@@ -38,54 +40,21 @@ class AIModuleFilter(django_filters.FilterSet):
         conjoined=True  # AND - все указанные теги должны быть
     )
     
-    # Фильтр по категории тегов
-    tag_categories = django_filters.ModelMultipleChoiceFilter(
-        field_name='aimoduletag__tag__category',
-        queryset=TagCategory.objects.filter(is_active=True),
-        distinct=True
+    ability = django_filters.BaseInFilter(
+        field_name='details__ability',
+        lookup_expr='in'
     )
-    
-    # Временные фильтры
-    created_after = django_filters.DateFilter(
-        field_name='created_at',
-        lookup_expr='date__gte'
-    )
-    created_before = django_filters.DateFilter(
-        field_name='created_at',
-        lookup_expr='date__lte'
-    )
-    
-    published_after = django_filters.DateFilter(
-        field_name='published_at',
-        lookup_expr='date__gte'
-    )
-    published_before = django_filters.DateFilter(
-        field_name='published_at',
-        lookup_expr='date__lte'
-    )
-    
-    # Фильтр по лайкам
-    min_likes = django_filters.NumberFilter(
-        method='filter_min_likes'
-    )
-    
-    # Фильтр по автору
-    created_by_username = django_filters.CharFilter(
-        field_name='created_by__username',
-        lookup_expr='iexact'
+
+    detailed_status = django_filters.BaseInFilter(
+        field_name='details__status',
+        lookup_expr='in'
     )
     
     # Комплексный поиск
     search = django_filters.CharFilter(
         method='filter_search'
     )
-    
-    # Фильтр "только мои модули"
-    my_modules = django_filters.BooleanFilter(
-        method='filter_my_modules'
-    )
-    
-    # Фильтр по наличию публикаций
+
     has_publications = django_filters.BooleanFilter(
         method='filter_has_publications'
     )
@@ -95,7 +64,7 @@ class AIModuleFilter(django_filters.FilterSet):
         fields = [
             'status', 'country',
         ]
-    
+
     def filter_min_likes(self, queryset, name, value):
         """Фильтр по минимальному количеству лайков"""
         return queryset.annotate(

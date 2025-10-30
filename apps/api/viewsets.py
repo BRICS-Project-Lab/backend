@@ -573,6 +573,7 @@ class AvailabilityAIModulesViewSet(viewsets.ViewSet):
 
     def list(self, request):
         unique_availability_ids = AIModuleDetail.objects.values_list('ability', flat=True).distinct().exclude(ability__isnull=True)
+        
         answer = [{
             "id": i+1,
             "name": translit(name, 'ru', reversed=True),
