@@ -149,23 +149,26 @@ SIMPLE_JWT = {
 }
 
 # CORS settings
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-]
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='localhost,127.0.0.1').split(',')
+
+# [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+#     "http://localhost:8080",
+#     "http://127.0.0.1:8080",
+# ]
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
-CSRF_TRUSTED_ORIGINS  = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
-]
+CSRF_TRUSTED_ORIGINS  = config('CSRF_TRUSTED_ORIGINS', default='localhost,127.0.0.1').split(',')
+# [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+#     "http://localhost:8080",
+#     "http://127.0.0.1:8080",
+#     "http://127.0.0.1:8000",
+#     "http://localhost:8000",
+# ]
 # API Documentation
 SPECTACULAR_SETTINGS = {
     'TITLE': 'BRICS AI Registry API',
